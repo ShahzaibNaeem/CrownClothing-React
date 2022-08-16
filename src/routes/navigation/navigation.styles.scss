@@ -1,0 +1,22 @@
+.navigation{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0px 40px;
+}
+
+.navlink-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-link{
+    &:link,&:visited{                      
+      color:black;
+      transition:color 0.2s linear;          
+    }
+    &:hover,&:active{
+      color:#808282;
+    }
+   }
