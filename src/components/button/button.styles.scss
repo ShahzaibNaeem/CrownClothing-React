@@ -29,8 +29,10 @@
     }
 
      &.hoverEffect{
+      border:1px solid rgb(24 24 29);
         &:hover,&:active{
         background-color: white;
+        border:1px solid rgb(24 24 29);
         color: rgb(24 24 29);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }

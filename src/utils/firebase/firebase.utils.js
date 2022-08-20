@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword ,signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword ,signInWithEmailAndPassword,onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -26,6 +26,11 @@ export const signInAuthUserWithEmailAndPassword= async(email,password)=>{
     if(!email || !password) return;
     return await signInWithEmailAndPassword(auth,email,password);
 }
+//   -----SignOut User-----
+export const SignOutUser=async()=> await signOut(auth)
+
+// ----State Observer Listener----(Called everytime user signIn or SignOut & Listen's All time)
+export const onAuthStateChangedlistener=(callback)=>onAuthStateChanged(auth,callback);
 
 //   ------------SignUp with Email/Password-----------
 export const createAuthUserWithEmailAndPassword=async(email,password)=>{

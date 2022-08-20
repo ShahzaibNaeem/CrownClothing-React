@@ -5,11 +5,16 @@
     align-items: center;
     margin-bottom: 25px;
     padding: 0px 40px;
-}
+
 
 .nav-link-container{
     display: flex;
     gap: 30px;
+ span{
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
+    }
 .nav-link{
     &:link,&:visited{                      
       color:black;
@@ -21,3 +26,4 @@
     }
    }
   }
+}

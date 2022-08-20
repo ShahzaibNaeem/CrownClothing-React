@@ -5,15 +5,14 @@ import "./sign-up-form.styles.scss";
 import {createAuthUserWithEmailAndPassword,createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
 
 const SignUp = () => {
-
-    const defaultFormFields={
-                        displayName:"",
-                        email:"",
-                        password:"",
-                        confirmPassword:""
-                    }
-    const [formFields, setFormFields] = useState(defaultFormFields)
-    const {displayName,email,password,confirmPassword}=formFields;
+  const defaultFormFields={
+    displayName:"",
+    email:"",
+    password:"",
+    confirmPassword:""
+  }
+  const [formFields, setFormFields] = useState(defaultFormFields)
+  const {displayName,email,password,confirmPassword}=formFields;
   
     const handleChange=(e)=>{
       const {name,value}=e.target;
