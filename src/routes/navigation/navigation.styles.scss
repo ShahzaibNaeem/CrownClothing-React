@@ -4,13 +4,14 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    padding: 0px 40px;
+    padding: 0px 20px;
 
 
 .nav-link-container{
     display: flex;
+    align-items: center;
     gap: 30px;
- span{
+ .signout-span{
     text-transform: uppercase;
     font-size: 18px;
     cursor: pointer;
