@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword ,signInWithEmailAndPassword,onAuthStateChanged, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore"
+import { getFirestore, doc, getDoc, setDoc ,collection,writeBatch, query, getDocs} from "firebase/firestore"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAmT-zj7cJ9UTqTtCGrx_ML5O9HdCNp_hY",
@@ -38,7 +38,8 @@ export const createAuthUserWithEmailAndPassword=async(email,password)=>{
     return await createUserWithEmailAndPassword(auth,email,password);
 }
 
-//   ------------Firestore Db-----------
+
+//   -----------------Firestore Db-------------------
 export const db=getFirestore();
 
 export const createUserDocumentFromAuth= async(userAuth,additionalInformation)=>{
@@ -57,5 +58,36 @@ export const createUserDocumentFromAuth= async(userAuth,additionalInformation)=>
    }
    return userDocRef;
 }
+
+// -------Write Batch Operation in FireStore Db-----
+export const addCollectionsAndDocuments=async(collectionKey,objectsToAdd)=>{
+      const collectionRef=collection(db,collectionKey);
+      const batch=writeBatch(db);
+
+      objectsToAdd.forEach((object)=>{
+        const docRef=doc(collectionRef,object.title.toLowerCase());
+        batch.set(docRef,object);
+      })
+      await batch.commit();
+}
+
+export const getCategoriesAndDocumnets=async()=>{
+    const collectionRef=collection(db,"categories");
+    const q=query(collectionRef);
+    const querySnapshot=await getDocs(q); //console.log(querySnapshot.docs[0].data());
+
+    const categoryMap=querySnapshot.docs.reduce((acc,docSnapshot)=>{
+        const{title,items}=docSnapshot.data();
+        acc[title]=items;
+        return acc;
+    },{})
+  
+    return categoryMap;
+}
+
+
+
+// Batch Writes:
+// whenever we want to write,read,delete with changes that should only be applied if none of these changes should failed then batch writes are used . like Transaction(successfull unit of works)
 
 

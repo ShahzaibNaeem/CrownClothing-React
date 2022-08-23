@@ -1,0 +1,23 @@
+.category-preview-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    
+    .category-title{
+        margin-bottom: 20px; 
+    span{
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        transition:all 0.2s linear; 
+        &:hover,&:active{
+            color:#808282;
+        }
+    } }
+
+    .category-preview{
+        display: grid;
+        grid-template-columns: repeat(4,auto);
+        column-gap: 20px;
+    }
+}
