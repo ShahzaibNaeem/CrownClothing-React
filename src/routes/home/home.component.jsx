@@ -1,6 +1,6 @@
-import CategoryDirectory from "../../components/category-directoy/category-directory.component";
+import Directory from "../../components/directory/directory.component";
 const Home = () => {
-    const categories = [
+    const directoryItems = [
       {
         "id": 1,
         "title": "hats",
@@ -29,7 +29,7 @@ const Home = () => {
     ]
   return (
     <>
-    <CategoryDirectory categories={categories}/>
+    <Directory directoryItems={directoryItems}/>
     </>
   );
 }

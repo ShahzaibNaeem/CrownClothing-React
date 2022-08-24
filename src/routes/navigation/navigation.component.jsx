@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link,Outlet } from "react-router-dom";
+import { Link,NavLink,Outlet } from "react-router-dom";
 
 import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
@@ -26,10 +26,10 @@ const Navigation =()=>{
       </Link>
        
         <div className="nav-link-container">
-            <Link className="nav-link" to="/shop">Shop</Link>
+            <NavLink className="nav-link" to="/shop">Shop</NavLink>
             {currentUser?
             <span className="signout-span nav-link" onClick={signOutHandler}>Sign Out</span>:
-            <Link className="nav-link" to="/auth">Sign In</Link>} 
+            <NavLink className="nav-link" to="/auth">Sign In</NavLink>} 
             <CartIcon/>
         </div>
         {isCartOpen && <CartDropdown/>}

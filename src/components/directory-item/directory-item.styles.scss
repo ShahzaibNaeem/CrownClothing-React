@@ -1,4 +1,4 @@
-.category-container{
+.directory-container{
     display: flex;
     flex: 1 1 auto;
     align-items: center;
@@ -23,8 +23,8 @@
         transform: scale(1.1);
     }
 
-    .category-body-container{
-        height: 90px;
+    .directory-body-container{
+        height: 90px; 
         padding: 0 25px;
         display: flex;
         flex-direction: column;
@@ -47,7 +47,7 @@
             font-weight: 300;
           }
     }
-    .category-body-container:hover{
+    .directory-body-container:hover{
         opacity: 0.9;
     }
 

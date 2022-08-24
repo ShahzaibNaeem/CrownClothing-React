@@ -3,19 +3,22 @@
     flex-direction: column;
     margin-bottom: 35px;
     
-    .category-title{
+    .category-preview-title{
         margin-bottom: 20px; 
-    span{
+    a{
         font-size: 28px;
         font-weight: bold;
         cursor: pointer;
         transition:all 0.2s linear; 
+        &:visited,&:link{
+            color:black;
+        }
         &:hover,&:active{
             color:#808282;
         }
     } }
 
-    .category-preview{
+    .category-preview-body{
         display: grid;
         grid-template-columns: repeat(4,auto);
         column-gap: 20px;
