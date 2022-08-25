@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import "./sign-up-form.styles.scss";
 import {createAuthUserWithEmailAndPassword,createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
 
@@ -52,7 +52,7 @@ const SignUp = () => {
     <FormInput label="email" type="email"  name="email" onChange={handleChange} value={email}  autoComplete="off" required/>
     <FormInput label="password" type="password"  name="password" minLength={4} onChange={handleChange} value={password} autoComplete="off" required/>
     <FormInput label="Confirm Password" type="password" name="confirmPassword" minLength={4} onChange={handleChange} value={confirmPassword} autoComplete="off" required/>  
-     <Button type="submit" buttonType="hoverEffect">Sign Up</Button>
+     <Button type="submit" buttonType={BUTTON_TYPE_CLASSES.hoverEffect}>Sign Up</Button>
     </form>
     
     </div>

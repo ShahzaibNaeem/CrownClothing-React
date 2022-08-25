@@ -12,7 +12,8 @@ export const CategoriesProvider=({children})=>{
       const categoryMap=await getCategoriesAndDocumnets();
       setCategoriesMap(categoryMap);
     }
-    getCategoriesMap();  
+    getCategoriesMap();
+    // eslint-disable-next-line
     }, [])  
    
    const value={categoriesMap};

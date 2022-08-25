@@ -1,5 +1,6 @@
+import styled from 'styled-components';
 
-.button-container{
+export const BaseButton=styled.button`
     padding: 10px 24px;
     color:white;
     background-color: rgb(24 24 29);
@@ -12,8 +13,8 @@
     &:hover,&:active{
         transform: scale(96%);   
     }
-
-    &.google-sign-in {
+`
+export const GoogleSignInButton=styled(BaseButton)`
         display: flex;
         align-items: center;
         gap: 10px;
@@ -21,32 +22,29 @@
         color: #4285f4;
         border: 1px solid #4285f4;
         font-weight: 700;
-     &:hover,&:active{
+
+        &:hover,&:active{
         background-color: #4285f4;
         color: white;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      }
-    }
-
-     &.hoverEffect{
-      border:1px solid rgb(24 24 29);
+   `
+   export const HoverEffectButton=styled(BaseButton)`
+        border:1px solid rgb(24 24 29);
         &:hover,&:active{
         background-color: white;
         border:1px solid rgb(24 24 29);
         color: rgb(24 24 29);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
-     }
-
-    &.hoverInverted {
+   `
+   export const HoverInvertedButton=styled(BaseButton)`
         background-color: white;
         color: rgb(24 24 29);
         border: 1px solid rgb(24 24 29);
-     &:hover,&:active{
+       &:hover,&:active{
         background-color: rgb(24 24 29);
         color: white;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      }
-    }
-
-}
+   `

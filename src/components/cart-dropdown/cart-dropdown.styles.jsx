@@ -1,4 +1,7 @@
-.card-dropdown-container{
+import styled from "styled-components"
+import { BaseButton,HoverInvertedButton,HoverEffectButton } from "../button/button.styles"
+
+export const CartDropdownContainer=styled.div`
     width: 240px;
     height: 340px;
     position: absolute;
@@ -11,7 +14,11 @@
     border: 1px solid black;
     background-color: white;
 
-    .cart-items{
+    ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+        margin-top:auto;
+      }
+`
+export const CartItems=styled.div`
       height: 240px;
       display: flex;
       overflow-y: scroll;
@@ -23,14 +30,10 @@
         border-radius: 10px;
         background-color:rgb(125, 129, 129);
        }
-    }
+    `
+export const EmptyMessage=styled.span`
+       font-size: 18px;
+       margin: 50px auto;
+`
 
-    .empty-message {
-        font-size: 18px;
-        margin: 50px auto;
-      }
-
-    button {
-        margin-top: auto;
-      }
-    }
+  

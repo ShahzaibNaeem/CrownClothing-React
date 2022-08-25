@@ -1,9 +1,9 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button,{BUTTON_TYPE_CLASSES} from "../button/button.component";
 import "./sign-in-form.styles.scss";
 import {ReactComponent as GoogleLogo} from "../../assets/google-logo.svg"
-import {signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import {signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
 
 const SignIn = () => {
@@ -28,7 +28,7 @@ const SignIn = () => {
      e.preventDefault();
      try {
         resetFormFields();
-         const {user}= await signInAuthUserWithEmailAndPassword(email,password);
+          await signInAuthUserWithEmailAndPassword(email,password);
      } catch (error) {
         switch (error.code) {
           case ("auth/user-not-found"):
@@ -45,7 +45,7 @@ const SignIn = () => {
     }
     // ----SignIn with GooglePopup-------
     const logGoogleUser=async()=>{
-      const {user}=await signInWithGooglePopup();
+        await signInWithGooglePopup();
      }
 
   return (
@@ -58,8 +58,8 @@ const SignIn = () => {
     <FormInput label="email" type="email"  name="email" onChange={handleChange} value={email}   autoComplete="on" required/>
     <FormInput label="password" type="password"  name="password" minLength={4} onChange={handleChange} value={password} autoComplete="on"  required/>
     <div className="buttons-container">
-     <Button type="submit">Sign In</Button>
-     <Button type="button" buttonType="google" onClick={logGoogleUser}>
+     <Button type="submit" buttonType={BUTTON_TYPE_CLASSES.base}> Sign In </Button>
+     <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={logGoogleUser}>
      <GoogleLogo/> Google Sign In</Button>
      </div>
     </form>

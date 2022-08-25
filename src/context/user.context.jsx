@@ -18,8 +18,8 @@ export const UserProvider=({children})=>{
                 }
             setCurrentUser(user);
           });  
-
           return unsubscribe;
+          // eslint-disable-next-line
         },[])
 
     return  <UserContext.Provider value={value}>{children}</UserContext.Provider>
