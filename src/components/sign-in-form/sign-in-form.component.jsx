@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button,{BUTTON_TYPE_CLASSES} from "../button/button.component";
-import "./sign-in-form.styles.scss";
+import {SignInContainer,Heading,SubHeading,ButtonsContainer, Form} from "./sign-in-form.styles.jsx";
 import {ReactComponent as GoogleLogo} from "../../assets/google-logo.svg"
 import {signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
@@ -50,21 +50,21 @@ const SignIn = () => {
 
   return (
     <>
-    <div className="sign-in-container">
-    <h2>WELCOME BACK</h2>
-    <span>Sign in with email and password</span>
+    <SignInContainer>
+    <Heading>WELCOME BACK</Heading>
+    <SubHeading>Sign in with email and password</SubHeading>
 
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
     <FormInput label="email" type="email"  name="email" onChange={handleChange} value={email}   autoComplete="on" required/>
     <FormInput label="password" type="password"  name="password" minLength={4} onChange={handleChange} value={password} autoComplete="on"  required/>
-    <div className="buttons-container">
+    <ButtonsContainer>
      <Button type="submit" buttonType={BUTTON_TYPE_CLASSES.base}> Sign In </Button>
      <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={logGoogleUser}>
      <GoogleLogo/> Google Sign In</Button>
-     </div>
-    </form>
+     </ButtonsContainer>
+    </Form>
     
-    </div>
+    </SignInContainer>
     </>
   )
 }
