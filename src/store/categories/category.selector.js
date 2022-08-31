@@ -14,8 +14,12 @@ export const selectCategoriesMap=createSelector(
                const {title, items}=category
                accum[title.toLowerCase()]=items
                return accum
-               },{})
-     
+               },{})  
+)
+
+export const selectIsCategoriesLoading=createSelector(
+     [selectCategoriesReducer],
+     (categoriesSlice)=>categoriesSlice.isLoading
 )
 
 

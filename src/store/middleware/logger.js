@@ -9,3 +9,12 @@ export const loggerMiddleware=(store)=>(next)=>(action)=>{
      next(action)
      console.log("nextState:", store.getState())
  } 
+
+
+
+//Working of Thunk as a Middleware
+ export const thunkMiddleware=(store)=>(next)=>(action)=>{
+    if(typeof(action)==="function"){
+        next(dispatch)
+    }
+ }
