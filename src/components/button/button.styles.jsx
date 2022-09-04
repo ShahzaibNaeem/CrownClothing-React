@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SpinnerContainer } from '../spinner/spinner.styles';
 
 export const BaseButton=styled.button`
     padding: 10px 24px;
@@ -48,3 +49,8 @@ export const GoogleSignInButton=styled(BaseButton)`
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
      }
    `
+
+   export const ButtonSpinner=styled(SpinnerContainer)`
+      width: 25px;
+      height: 25px;
+  `

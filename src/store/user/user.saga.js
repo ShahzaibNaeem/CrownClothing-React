@@ -13,7 +13,7 @@ export function* getSnapshotFromUserAuth(userAuth,additionalDetails){
   }
 }
 
-// ------SignUp Saga functions-------
+// ------SignOut Saga functions-------
 export function* signOut(){
   try {
     yield call(SignOutUser)
