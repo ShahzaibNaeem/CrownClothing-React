@@ -1,5 +1,8 @@
+import { Middleware } from "redux"
+import { RootState } from "../store"
+
 //MiddleWare are chained curryfunctions in Redux
-export const loggerMiddleware=(store)=>(next)=>(action)=>{
+export const loggerMiddleware:Middleware<{},RootState>=(store)=>(next)=>(action)=>{
     if(!action.type) next(action)
  
      console.log("type: " , action.type)
@@ -13,8 +16,8 @@ export const loggerMiddleware=(store)=>(next)=>(action)=>{
 
 
 //Working of Thunk as a Middleware
- export const thunkMiddleware=(store)=>(next)=>(action)=>{
-    if(typeof(action)==="function"){
-        next(dispatch)
-    }
- }
+//  export const thunkMiddleware=(store)=>(next)=>(action)=>{
+//     if(typeof(action)==="function"){
+//         next(dispatch)
+//     }
+//  }
