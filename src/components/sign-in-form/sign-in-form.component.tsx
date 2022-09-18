@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import FormInput from "../form-input/form-input.component";
 import Button,{BUTTON_TYPE_CLASSES} from "../button/button.component";
-import {SignInContainer,Heading,SubHeading,ButtonsContainer, Form} from "./sign-in-form.styles.jsx";
+import {SignInContainer,Heading,SubHeading,ButtonsContainer, Form} from "./sign-in-form.styles";
 import {ReactComponent as GoogleLogo} from "../../assets/google-logo.svg"
 import { emailSignInStart, googleSignInStart } from "../../store/user/user.action";
 
@@ -17,7 +17,7 @@ const SignIn = () => {
     const [formFields, setFormFields] = useState(defaultFormFields)
     const {email,password}=formFields;
 
-    const handleChange=(e)=>{
+    const handleChange=(e:ChangeEvent<HTMLInputElement>)=>{
       const {name,value}=e.target;
       setFormFields({...formFields,[name]:value})
     }
@@ -26,23 +26,13 @@ const SignIn = () => {
         setFormFields(defaultFormFields)
     }
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=(e:FormEvent<HTMLFormElement>)=>{
      e.preventDefault();
      try {
         resetFormFields();
         dispatch(emailSignInStart(email,password))
      } catch (error) {
-        switch (error.code) {
-          case ("auth/user-not-found"):
-            alert("no user associated with this email") 
-            break;
-            case("auth/wrong-password"):
-            alert("incorrect password")
-            break;
-          default:
-            console.log(error);
-            break;
-        }
+        alert(error)
      }
     }
     // ----SignIn with GooglePopup-------
