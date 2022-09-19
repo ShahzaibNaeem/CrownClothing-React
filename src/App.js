@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux/es/exports";
 
 import { checkUserSession } from "./store/user/user.action";
-import { GlobalStyle } from "./utils/global-styles/global-styles.styles";
+import { GlobalStyle } from "./globa.styles";
 
 import Spinner from "./components/spinner/spinner.component";
 const Home = lazy(() => import("./routes/home/home.component"))

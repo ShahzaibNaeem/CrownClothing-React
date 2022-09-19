@@ -11,9 +11,13 @@ export const GlobalStyle=createGlobalStyle`
 }
 
 body {
-  padding: 0px 40px 20px;
+   padding: 0px 40px 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  @media screen and (max-width:800px){
+   padding: 10px; 
+  }
 }
 
 code {

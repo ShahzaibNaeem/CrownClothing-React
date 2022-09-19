@@ -8,15 +8,28 @@ export const NavigationContainer=styled.div`
     align-items: center;
     margin-bottom: 25px;
     padding: 0px 20px;
+
+    @media screen and (max-width:800px){
+      height: 60px;
+      padding: 10px;
+      margin-bottom:20px;
+    }
 `
 export const LogoContainer=styled(Link)`
-   padding:"25px";
+    @media screen and (max-width:600px){
+      .logo{
+        max-width: 40px;
+      }
+    }
 `
 
 export const NavigationLinks=styled.div`
       display: flex;
       align-items: center;
       gap: 30px;
+      @media screen and (max-width:600px){
+      gap: 20px
+    }  
 `
 
 export const NavigationLink=styled(NavLink)`
@@ -35,10 +48,18 @@ export const NavigationLink=styled(NavLink)`
       border-bottom: 2px solid black;
       }
 
+      @media screen and (max-width:600px){
+      font-size:16px
+    }  
+
 `
 export const NavigationLinkSignOut=styled.span`
       text-transform: uppercase;
       font-size: 18px;
       cursor: pointer;
+
+      @media screen and (max-width:600px){
+      font-size: 16px;
+    }
 `
 

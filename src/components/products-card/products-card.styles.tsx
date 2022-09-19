@@ -4,7 +4,7 @@ import { BaseButton,HoverInvertedButton,HoverEffectButton} from "../button/butto
 
 export const Image=styled.img`
     width: 100%;
-    max-height: 90%;
+    height: 90%;
     object-fit: cover;
     margin-bottom: 5px;
 `
@@ -36,6 +36,37 @@ export const ProductsCardContainer=styled.div`
             opacity: 0.87;
         }
     }
+    
+    @media screen and (max-width:1000px){
+        ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+             padding:10px 0px;
+        }
+    }
+
+    @media screen and (max-width:800px){
+        margin-bottom:20px;
+        ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+             font-size:16px;
+        }
+        &:hover{
+        ${Image}{
+            opacity: unset;
+        }
+    }
+    }
+
+    @media screen and (max-width:600px){
+        ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+             font-size:14px;
+             display: block;
+        }
+        &:hover{
+            ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+                opacity: unset;
+            }
+        }
+    }
+
 `
 
 export const ProductsCardFooter=styled.div`
@@ -44,6 +75,13 @@ export const ProductsCardFooter=styled.div`
         display: flex;
         justify-content: space-between;
         font-size: 18px;
+
+    @media screen and (max-width:800px){
+        font-size: 16px
+    }
+    @media screen and (max-width:600px){
+        font-size: 14px
+    }
 `
 
 export const Name=styled.span`

@@ -45,6 +45,27 @@ export const DirectoryBody=styled.div`
      &:last-child {
         margin-left: 7.5px;
       }
+
+      @media screen and (max-width:800px){
+        height: 80px;
+        padding: 0 20px;
+        h2{
+            font-size:20px;
+        }
+        p{
+            font-size:14px;
+        }
+    }   
+      @media screen and (max-width:600px){
+        height: 70px;
+        padding: 0 15px;
+        h2{
+            font-size:18px;
+        }
+        p{
+            font-size:12px;
+        }
+    }   
    `
    
    export const DirectoryItemContainer=styled.div`
@@ -67,5 +88,9 @@ export const DirectoryBody=styled.div`
             transform: scale(1.1);
            }
        }
+
+       @media screen and (max-width:800px){
+        height: 200px; 
+        }
    `
    
