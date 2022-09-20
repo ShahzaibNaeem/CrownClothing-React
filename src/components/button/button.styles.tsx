@@ -18,6 +18,7 @@ export const BaseButton=styled.button`
 export const GoogleSignInButton=styled(BaseButton)`
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 10px;
         background-color: white;
         color: #4285f4;

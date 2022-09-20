@@ -43,6 +43,10 @@ export const Input=styled.input`
           ${ShrinkLabelStyles}
         }
 
+    @media screen and (max-width:800px){
+      font-size:16px;
+    }
+
 `
 
 export const Group=styled.div`

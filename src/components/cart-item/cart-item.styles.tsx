@@ -5,7 +5,7 @@ export const CartItemContainer=styled.div`
     display: flex;
     max-height: 80px;
     margin-bottom: 15px;
-    
+   
 `
 export const CartItemImage=styled.img`
     width: 30%;
@@ -20,7 +20,13 @@ export const CartItemDetails=styled.div`
 export const Name=styled.div`
     font-size: 16px;
     font-weight: bold;
+    @media screen and (max-width:800px){
+        font-size: 15px;
+    }
 `
 export const Price=styled.div`
+   @media screen and (max-width:800px){
+        font-size: 14px;
+    }
     
 `

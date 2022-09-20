@@ -51,6 +51,7 @@ const SignIn = () => {
     <FormInput label="password" type="password"  name="password" minLength={4} onChange={handleChange} value={password} autoComplete="on"  required/>
     <ButtonsContainer>
      <Button type="submit" buttonType={BUTTON_TYPE_CLASSES.base}> Sign In </Button>
+      <span> </span>
      <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={logGoogleUser}>
      <GoogleLogo/> Google Sign In</Button>
      </ButtonsContainer>

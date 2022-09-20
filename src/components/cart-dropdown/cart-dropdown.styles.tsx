@@ -13,10 +13,19 @@ export const CartDropdownContainer=styled.div`
     padding: 20px;
     border: 1px solid black;
     background-color: white;
-
     ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
         margin-top:auto;
       }
+
+    @media screen and (max-width:800px){
+      width: 220px;
+      height: 320px;
+      top: 78px;
+      right: 14px;
+      ${BaseButton},${HoverInvertedButton},${HoverEffectButton}{
+        font-size:14px;
+      }
+    }
 `
 export const CartItems=styled.div`
       height: 240px;
@@ -34,6 +43,10 @@ export const CartItems=styled.div`
 export const EmptyMessage=styled.span`
        font-size: 18px;
        margin: 50px auto;
+
+    @media screen and (max-width:800px){
+        font-size: 15px;
+    }
 `
 
   
