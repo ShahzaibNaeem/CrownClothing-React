@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as serviceWorker from "./serviceWorkerRegistration"
 
 import { PersistGate } from 'redux-persist/integration/react'
 import { BrowserRouter } from "react-router-dom";
@@ -25,4 +26,5 @@ root.render(
   // </React.StrictMode>
 );
 
+serviceWorker.register();
 reportWebVitals();
