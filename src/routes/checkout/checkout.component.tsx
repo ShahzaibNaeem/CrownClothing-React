@@ -8,6 +8,7 @@ import PaymentForm from "../../components/payment-form/payment-form.component";
 const CheckOut = () => {
     const cartItems=useSelector(selectCartItems)
     const cartTotal=useSelector(selectCartTotal)
+    
     return (
         <>
         <CheckoutContainer>
@@ -24,6 +25,7 @@ const CheckOut = () => {
             ))}
 
          <TotalPrice>TOTAL: ${cartTotal}</TotalPrice>
+
          <PaymentForm/>
         </CheckoutContainer>
         </>

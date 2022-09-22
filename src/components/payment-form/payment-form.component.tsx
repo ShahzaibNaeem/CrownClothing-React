@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { selectCartItems, selectCartTotal } from "../../store/cart/cart.selector"
 import { selectCurrentUser } from "../../store/user/user.selector"
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component"
+import PaymentSuccess from "../paymentsuccess-preview/paymentsuccess-preview.component"
 import { FormContainer, FormTitle } from "./payment-form.styles"
 
 
@@ -15,6 +16,7 @@ const PaymentForm = () => {
   const currentUser=useSelector(selectCurrentUser)
   const cartItems=useSelector(selectCartItems)
   const [isProcessingPayment, setIsProcessingPayment] = useState(false)
+  const [isPopupOpen, setIsPopupOpen]=useState(false)
 
     const paymentHandler=async(e:FormEvent<HTMLFormElement>)=>{
      e.preventDefault();
@@ -50,7 +52,7 @@ const PaymentForm = () => {
      }
      else{
       if(paymentResult.paymentIntent.status==="succeeded"){
-        alert("Payment successfull")
+        setIsPopupOpen(true)
       }
      }
     }
@@ -65,6 +67,10 @@ const PaymentForm = () => {
         :
         " "
        } 
+       {
+        isPopupOpen && 
+        <PaymentSuccess isPopupOpen={isPopupOpen} setIsPopupOpen={setIsPopupOpen}/>
+       }
     </>
   )
 }
